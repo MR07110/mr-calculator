@@ -1,0 +1,70 @@
+.c-button:active {
+   width: 45px;
+   height: 45px;
+   border-radius: 25px;
+}
+
+.plus-button:active {
+   width: 45px;
+   height: 45px;
+   border-radius: 25px;
+}
+
+.button:active {
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  filter: blur(3px);
+  transition: 0.1s;
+}
+
+input:active {
+   border: 2px solid white;
+}
+.plus-button:active{
+   background: linear-gradient(to top, #008ae6, #80ccff);
+   width: 45px;
+   height: 45px;
+}
+.minus-button:active {
+   background: linear-gradient(to bottom, #008ae6, #80ccff);
+   width: 45px;
+   height: 45px;
+}
+
+.del-button:active {
+   background: linear-gradient(to left, #ff3333, #ffb3b3);
+   color: white;
+   width: 45px;
+   height: 45px;
+}
+
+.x-button:active {
+     background: linear-gradient(to right, #008ae6, #80ccff);
+     width: 45px;
+     height: 45px;
+
+}
+.slash-button:active {
+   background: linear-gradient(to left, #008ae6, #80ccff);
+     width: 45px;
+     height: 45px;
+
+}
+
+.nuqta-button:active {
+   background: rgba(255, 255, 255, 0.5); 
+   width: 45px;
+   height: 45px;
+}
+.x-slash-minus-button:active{
+   background: rgba(255, 255, 255, 0.5); 
+   width: 45px;
+   height: 45px;
+}
+
+
+.equal:active {
+   width: 45px;
+   height: 95px;
+}

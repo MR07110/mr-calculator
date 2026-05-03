@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="hover.css">
+    <link rel="stylesheet" href="active.css">
+</head>
+<body>
+   <div class="container"></div>
+   <div class="about">
+    <h1 class="mr-calculator"><a href="https://github.com/mr07110/" target="blank" class="github-link">MR</a><a href="https://mr07110.github.io/mr-calculator/" class="github-link"><span>Calculator</span></a></h1>
+   </div>	
+	<div class="calculator">
+      <input type="text" class="input-text" readonly>
+<div class="numbers">
+    <div class="line1">
+        <button class="bir button" onclick="addValue('1')">1</button>
+        <button class="ikk button" onclick="addValue('2')">2</button>
+        <button class="uch button" onclick="addValue('3')">3</button>
+        <button class="c-button" onclick="clearScreen()">C</button>
+        <button class="del-button" onclick="deleteLast()">
+         <img src="delete.svg" alt="del" class="icons">
+        </button>
+    </div>
+    <div class="line2">
+        <button class="tort button" onclick="addValue('4')">4</button>
+        <button class="besh button" onclick="addValue('5')">5</button>
+        <button class="olti button" onclick="addValue('6')">6</button>
+        <button class="x-button" onclick="addValue('*')">x</button>
+        <button class="slash-button" onclick="addValue('/')">/</button>
+    </div>
+    <div class="line3">
+        <button class="yetti button" onclick="addValue('7')">7</button>
+        <button class="sakkiz button" onclick="addValue('8')">8</button>
+        <button class="toqqiz button" onclick="addValue('9')">9</button>
+        <button class="minus-button" onclick="addValue('-')">-</button>
+    </div>
+    <div class="line3">
+        <button class="nuqta-button" onclick="addValue('.')">.</button>
+        <button class="nol button" onclick="addValue('0')">0</button>
+        <button class="x-slash-minus-button" onclick="changeSign()">+/-</button>
+        <button class="plus-button" onclick="addValue('+')">+</button>
+    </div>
+    <div class="line3-4">
+        <button class="equal" onclick="calculate()">=</button>
+    </div>
+</div>
+	</div>
+   </div>	
+   <script>
+    // Ekran (input) elementini tanlab olamiz
+let screen = document.querySelector('.input-text');
+
+// Tugma bosilganda qiymatni ekranga yozish
+function addValue(val) {
+    // Agar ekrandagi belgilar soni 10 tadan kam bo'lsagina yangi raqam qo'shadi
+    if (screen.value.length < 10) {
+        screen.value += val;
+    }
+}
+// Ekranini tozalash (C tugmasi)
+function clearScreen() {
+    screen.value = "";
+}
+
+// Hisoblash (= tugmasi)
+function calculate() {
+    try {
+        // eval() funksiyasi satr ichidagi matematikani hisoblaydi
+        screen.value = eval(screen.value);
+    } catch (e) {
+        screen.value = "";
+    }
+}
+// Oxirgi belgini o'chirish (Del tugmasi)
+// Oxirgi belgini o'chirish (Del tugmasi)
+function deleteLast() {
+    screen.value = screen.value.slice(0, -1);
+}
+
+// MANA SHU FUNKSIYA SIZDA YO'Q EDI:
+function changeSign() {
+    if (screen.value !== "") {
+        // Agar birinchi belgi minus bo'lsa, uni olib tashlaydi
+        if (screen.value.startsWith('-')) {
+            screen.value = screen.value.substring(1);
+        } else {
+            // Agar minus bo'lmasa, boshiga minus qo'shadi
+            screen.value = '-' + screen.value;
+        }
+    }
+}
+   </script>	
+</body>
+</html>
